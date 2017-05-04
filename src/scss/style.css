@@ -2,7 +2,7 @@
 /* Fonts */
 /* Media Query */
 /* Extends */
-.header-title {
+.header-title, .nav-bar nav, .latest-recipes .latest-recipes-heading {
   text-align: center; }
 
 /* Mixins */
@@ -32,3 +32,48 @@ a {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: #FFFFFF; }
+
+/* Nav-bar Styles */
+.nav-bar nav {
+  background-color: #f9f9f9;
+  padding-top: 1px;
+  height: 100%;
+  width: 100%; }
+
+.nav-list {
+  padding: 0;
+  margin: 0; }
+
+@media only screen and (min-width: 768px) {
+  .nav-list-item {
+    display: inline-block;
+    width: 33%;
+    height: 100%;
+    border-right: 1px solid black; } }
+
+.nav-list-item div {
+  height: 100%; }
+
+@media only screen and (min-width: 768px) {
+  .nav-list-item:last-child {
+    border-right: none; } }
+
+.nav-link-container {
+  height: 100%;
+  width: 100%;
+  margin: 0; }
+
+.nav-link {
+  display: block;
+  color: black;
+  height: 100%;
+  width: 100%;
+  padding: 1rem 0;
+  transition: color 0.5s; }
+
+.nav-link:hover {
+  color: #FFAE19; }
+
+/* Latest Recipe Section Styles */
+.latest-recipes {
+  padding-top: 3rem; }
