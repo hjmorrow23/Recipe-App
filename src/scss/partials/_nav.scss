@@ -51,3 +51,13 @@
 .nav-link:hover {
 	color: $orange;
 }
+
+.nav-bar input[type="text"] {
+	border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+.nav-bar input[type="text"]:focus {
+	border: solid 1px $orange;
+	box-shadow: 0 0 5px 1px $orange;
+}
