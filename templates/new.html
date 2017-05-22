@@ -1,0 +1,75 @@
+<section class="latest-recipes" ng-model="recipe">
+<!-- 	<h1 class="latest-recipes-heading">Latest Recipe</h1> -->
+	<article class="recipe">
+		<div>
+			<h2 class="new-recipe-name" ng-hide="editing" ng-click=" editing = !editing ">Name: {{recipe.name}}</h2>
+			<input class="ingr-label" ng-model="recipe.name" ng-show="editing" ng-blur=" editing = false; " placeholder="Name" type="text" />
+<!--
+			<button ng-click=" editing = !editing " ng-hide="editing">Edit</button>
+			<button ng-click="saveRecipe(recipe); editing = !editing" ng-show="editing">Save</button>
+-->
+		</div>
+		<div class="recipe-details">
+			<div>
+				<label class="recipe-category" ng-hide="editing" ng-click=" editing = !editing ">Category: {{recipe.category}}</label>
+				<input class="ingr-label" ng-model="recipe.category" ng-show="editing" ng-blur=" editing = false; " placeholder="Category" type="text" />
+<!--
+				<button ng-click=" editing = !editing " ng-hide="editing">Edit</button>
+				<button ng-click="saveRecipe(recipe); editing = !editing" ng-show="editing">Save</button>
+-->
+			</div>
+			<div>
+				<label class="recipe-prep-time" ng-hide="editing" ng-click=" editing = !editing ">Prep Time: {{recipe.prepTime}}</label>
+				<input class="ingr-label" ng-model="recipe.prepTime" ng-show="editing" ng-blur=" editing = false; " placeholder="Prep Time" type="text" />
+<!--
+				<button ng-click=" editing = !editing " ng-hide="editing">Edit</button>
+				<button ng-click="saveRecipe(recipe); editing = !editing" ng-show="editing">Save</button>
+-->
+			</div>
+			<div>
+				<label class="recipe-cook-time" ng-hide="editing" ng-click=" editing = !editing ">Cook Time: {{recipe.cookTime}}</label>
+				<input class="ingr-label" ng-model="recipe.cookTime" ng-show="editing" ng-blur=" editing = false; " placeholder="Cook Time" type="text" />
+<!--
+				<button ng-click=" editing = !editing " ng-hide="editing">Edit</button>
+				<button ng-click="saveRecipe(recipe); editing = !editing" ng-show="editing">Save</button>
+-->
+			</div>
+		</div>
+<!-- 	<img class="recipe-image" src="../img/cookies.jpeg" /> -->
+<!-- 	Add a way to upload images  -->
+		<h3>Ingredients</h3>
+		<a class="new-item" href="" ng-click="addIngr()">  + New</a>
+		<div ng-model="ingr">
+			<ul ng-repeat=" ingr in ingrs ">
+				<li>
+					<label class="recipe-prep-time" ng-hide="editing" ng-click=" editing = !editing ">{{ingr.name}} {{ingr.quantity}}</label>
+					<input class="ingr-label" ng-model="ingr.name" ng-show="editing" ng-blur=" editing = false; " placeholder="Ingredient Name" type="text" />
+					<input class="ingr-label" ng-model="ingr.quantity" ng-show="editing" ng-blur=" editing = false; " placeholder="Ingredient Quantity" type="text" />
+<!--
+					<button ng-click=" editing = !editing " ng-hide="editing">Edit</button>
+					<button ng-click="saveIngr(ingr); editing = !editing" ng-show="editing">Save</button>
+-->
+					<button ng-click="deleteIngr(ingr, $index)" ng-show="editing">Delete</button>
+				</li>
+			</ul>
+		</div>
+		<h3>Instructions</h3>
+		<a href="" class="new-item" ng-click="addDirec()">  + New</a>
+		<div ng-model="direc">
+			<ul ng-repeat=" direc in direcs ">
+				<li>
+					<label class="recipe-prep-time" ng-hide="editing" ng-click=" editing = !editing ">{{$index +1}}. {{direc}}</label>
+					<input class="ingr-label" ng-model="direc" ng-show="editing" ng-blur=" editing = false; " placeholder="Instruction" type="text" />
+<!--
+					<button ng-click=" editing = !editing " ng-hide="editing">Edit</button>
+					<button ng-click="saveDirec(direc); editing = !editing" ng-show="editing">Save</button>
+-->
+					<button ng-click="deleteDirec(direc, $index)" ng-show="editing">Delete</button>
+				</li>
+			</ul>
+		</div>
+		<button ng-click=" editing = !editing " ng-hide="editing">Edit</button>
+		<button ng-click="saveRecipe(recipe); editing = !editing" ng-show="editing">Save</button>
+		<button ng-click="addToCookbook()">Add to Cookbook</button>
+	</article>
+</section>

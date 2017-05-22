@@ -3,8 +3,7 @@
 /* Media Query */
 /* Extends */
 .header-title, .nav-bar nav, .latest-recipes .latest-recipes-heading, .article-heading,
-.direc-item,
-.new-item {
+.direc-item {
   text-align: center; }
 
 /* Mixins */
@@ -168,11 +167,12 @@ input[type="text"]:focus {
   width: 80%;
   margin: 0 auto; }
 
-.ingr input[type="text"],
-.direcs input[type="text"] {
+.latest-recipes input[type="text"] {
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s; }
 
-.ingr input[type="text"]:focus,
-.direcs input[type="text"]:focus {
+.latest-recipes input[type="text"]:focus {
   border-bottom: solid 2px #FFAE19; }
+
+.new-recipe-name {
+  display: inline-block; }

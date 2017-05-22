@@ -16,8 +16,7 @@
 }
 
 .article-heading,
-.direc-item,
-.new-item {
+.direc-item {
  	@extend %centered;
 }
 
@@ -50,15 +49,17 @@
 	margin: 0 auto;
 }
 
-.ingr input[type="text"],
-.direcs input[type="text"] {
+.latest-recipes input[type="text"] {
 	border-bottom: solid 2px #c9c9c9;
     transition: border 0.3s;
 }
 
-.ingr input[type="text"]:focus,
-.direcs input[type="text"]:focus {
+.latest-recipes input[type="text"]:focus {
 	border-bottom: solid 2px $orange;
+}
+
+.new-recipe-name {
+	display: inline-block;
 }
 
 

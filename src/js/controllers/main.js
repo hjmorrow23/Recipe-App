@@ -5,16 +5,14 @@ angular.module("recipeApp")
 	
 	$scope.addIngr = function() {
 		var ingr = { 
-			name: "ex Butter", 
-			quantity: "ex 2 tbsp"
+			name: "Name", 
+			quantity: "Quantity"
 		};
 		$scope.ingrs.unshift(ingr); //use ingrs.push to add to end of list 
 	}
 	
 	$scope.addDirec = function() {
-		var direc = {
-			step: "ex Stir for 2 hours on low heat"
-		};
+		var direc =  "Next step";
 		$scope.direcs.push(direc);
 	}
 	
@@ -29,6 +27,18 @@ angular.module("recipeApp")
 		}
 	}
 	
+	dataService.getRecipes(function(response) {
+		console.log(response.data);
+		$scope.recipes = response.data;
+		for(var i = 0; i < $scope.recipes.length; i++) {
+			$scope.ingrs = response.data[i].ingrs;
+			$scope.direcs = response.data[i].direcs;
+		}
+		console.log($scope.ingrs);
+		console.log($scope.direcs);
+	});
+	
+/*
 	dataService.getIngrs(function(response) {
 		console.log(response.data);
 		$scope.ingrs = response.data;
@@ -38,6 +48,7 @@ angular.module("recipeApp")
 		console.log(response.data);
 		$scope.direcs = response.data;
 	});
+*/
 	
 	$scope.deleteIngr = function(ingr, $index) {
 		dataService.deleteIngr(ingr);
@@ -49,11 +60,19 @@ angular.module("recipeApp")
 		$scope.direcs.splice($index, 1);
 	}
 	
+	$scope.saveRecipe = function(recipe) {
+		dataService.saveRecipe(recipe);
+	}
+	
 	$scope.saveIngr = function(ingr) {
 		dataService.saveIngr(ingr);
 	}
 	
 	$scope.saveDirec = function(direc) {
 		dataService.saveIngr(direc);
+	}
+	
+	$scope.addToCookbook = function() {
+		dataService.addToCookbook();
 	}
 });

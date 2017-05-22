@@ -4,8 +4,8 @@
 	<article>
 		<ul ng-repeat=" direc in direcs " ng-init="editing = true">
 			<li class="direc-item">
-				<label ng-hide="editing" ng-click=" editing = !editing ">{{direc.step}}</label>
-				<input ng-model="direc.step" ng-show="editing" ng-blur=" editing = false; " type="text" />
+				<label ng-hide="editing" ng-click=" editing = !editing ">{{$index +1}}. {{direc}}</label>
+				<input ng-model="direc" ng-show="editing" ng-blur=" editing = false; " type="text" />
 				<button ng-click=" editing = !editing " ng-hide="editing">Edit</button>
 				<button ng-click="saveDirec(direc); editing = !editing" ng-show="editing">Save</button>
 				<button ng-click="deleteDirec(direc, $index)">Delete</button>

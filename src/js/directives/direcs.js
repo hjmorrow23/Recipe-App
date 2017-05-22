@@ -1,7 +1,7 @@
 angular.module('recipeApp')
-.directive('direcs', function(){  //directions
+.directive('new', function(){  //directions
 	return {
-		templateUrl: 'templates/direcs.html',
+		templateUrl: 'templates/new.html',
 		controller: 'mainCtrl',
 		replace: true
 	}
